@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PySnaky - The Future of Python Learning 🐍</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="custom-cursor" id="cursor"></div>
+
+    <div class="video-background">
+        <video autoplay muted loop playsinline>
+            <source src="https://cdn.pixabay.com/vimeo/462408924/coding-56266.mp4?width=1280&hash=5f4f5f5f5f5f5f5f5f4f5f5f5f5f5f5f5f4f5f5f" type="video/mp4">
+        </video>
+    </div>
+
+    <canvas class="matrix-canvas" id="matrix"></canvas>
+
+    <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="particles" id="particles"></div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <span class="logo-icon">🐍</span>
+                <span class="logo-text">PySnaky</span>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <input type="radio" name="nav" id="nav-home" checked>
+                    <label for="nav-home" onclick="showPage('home')">
+                        <span class="nav-icon">🏠</span> Home
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="nav" id="nav-lesson">
+                    <label for="nav-lesson" onclick="showPage('lesson')">
+                        <span class="nav-icon">📚</span> Lesson
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="nav" id="nav-examples">
+                    <label for="nav-examples" onclick="showPage('examples')">
+                        <span class="nav-icon">💻</span> Examples
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="nav" id="nav-quiz">
+                    <label for="nav-quiz" onclick="showPage('quiz')">
+                        <span class="nav-icon">📝</span> Quiz
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" name="nav" id="nav-about">
+                    <label for="nav-about" onclick="showPage('about')">
+                        <span class="nav-icon">ℹ️</span> About
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sidebar">
+        <div class="progress-item completed" onclick="showPage('lesson')">
+            <span class="progress-icon">📚</span>
+            <span class="progress-text">Lesson 1</span>
+        </div>
+        <div class="progress-item active" onclick="showPage('examples')">
+            <span class="progress-icon">💻</span>
+            <span class="progress-text">Examples</span>
+        </div>
+        <div class="progress-item locked">
+            <span class="progress-icon">🔒</span>
+            <span class="progress-text">Quiz</span>
+        </div>
+        <div class="progress-item" onclick="showPage('about')">
+            <span class="progress-icon">ℹ️</span>
+            <span class="progress-text">About</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="page-content">
+            <div id="home-page">
+                <div class="hero">
+                    <h1>Welcome to PySnaky!✨</h1>
+                    <p class="hero-subtitle"> Master Python in the Most Creative & Interactive Way! 🎮</p>
+                    <button class="btn" onclick="showPage('lesson')">
+                        Start Your Epic Journey 
+                    </button>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎥</div>
+                        <h3>Immersive Videos</h3>
+                        <p>Experience mind-blowing visual tutorials with cinematic quality that transform complex Python concepts into unforgettable learning moments</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3>Live Code Studio</h3>
+                        <p>Execute Python code instantly in a futuristic browser-based editor with real-time feedback and stunning visual effects</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Gamified Universe</h3>
+                        <p>Embark on an epic quest through Python mastery with achievements, progress tracking, and electrifying challenges</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="lesson-page" style="display:none;">
+                <div class="content-card">
+                    <h2>Lesson 1: Variables & Print Magic</h2>
+                    
+                    <h3>What are Variables?</h3>
+                    <p>Variables are mystical containers that store your data like treasure chests! Think of them as labeled magic boxes where you can keep numbers, text, or any information you need in your legendary programs.</p>
+
+                    <h3>The Legendary Print Function</h3>
+                    <p>The <code>print()</code> function is your cosmic megaphone to the universe! It displays output on the screen, broadcasting your results, messages, and helping you debug like a Python wizard.</p>
+
+                    <div class="code-editor">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-title">Python Sorcery</span>
+                        </div>
+                        <pre id="code-lesson"># Welcome to the Python Universe!
+name = "PySnaky Master"
+age = 25
+power_level = 9000
+
+print("Greetings! I am", name)
+print("My age is", age, "years")
+print("My power level is OVER", power_level, "!")</pre>
+                    </div>
+                    <button class="run-btn" onclick="runCode('code-lesson', 'output-lesson')">▶ EXECUTE CODE</button>
+                    <div class="code-output" id="output-lesson">Click 'EXECUTE CODE' to unleash the magic!</div>
+
+                    <button class="btn" style="margin-top: 3rem;" onclick="showPage('examples')">Continue to Epic Examples →</button>
+                </div>
+            </div>
+
+            <div id="examples-page" style="display:none;">
+                <div class="content-card">
+                    <h2>Practice Arena 💻⚡</h2>
+                    <p>Level up your skills with these electrifying examples!</p>
+
+                    <h3>Example 1: Mathematical Wizardry</h3>
+                    <div class="code-editor">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-title">Math Magic </span>
+                        </div>
+                        <pre id="code-ex1">x = 42
+y = 13
+
+print("Sum:", x + y)
+print("➖ Difference:", x - y)
+print("✖️ Product:", x * y)
+print("➗ Division:", x / y)</pre>
+                    </div>
+                    <button class="run-btn" onclick="runCode('code-ex1', 'output-ex1')">▶ ACTIVATE</button>
+                    <div class="code-output" id="output-ex1">Ready for mathematical magic!</div>
+
+                    <h3>Example 2: String Manipulation Powers</h3>
+                    <div class="code-editor">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-title">String Sorcery</span>
+                        </div>
+                        <pre id="code-ex2">first_name = "Python"
+last_name = "Champion"
+
+full_name = first_name + " " + last_name
+print("Full name:", full_name)
+print("Name length:", len(full_name))
+print("🔼 UPPERCASE:", full_name.upper())
+print("🔽 lowercase:", full_name.lower())</pre>
+                    </div>
+                    <button class="run-btn" onclick="runCode('code-ex2', 'output-ex2')">▶ ACTIVATE</button>
+                    <div class="code-output" id="output-ex2">String powers awaiting activation!</div>
+
+                    <h3>Example 3: Multi-Variable Mastery</h3>
+                    <div class="code-editor">
+                        <div class="code-header">
+                            <span class="code-dot red"></span>
+                            <span class="code-dot yellow"></span>
+                            <span class="code-dot green"></span>
+                            <span class="code-title">Variable Virtuoso</span>
+                        </div>
+                        <pre id="code-ex3">python_version = 3.12
+is_awesome = True
+favorite_emoji = "🐍"
+
+print("Python Version:", python_version)
+print("Is Python awesome?", is_awesome)
+print("Favorite emoji:", favorite_emoji)</pre>
+                    </div>
+                    <button class="run-btn" onclick="runCode('code-ex3', 'output-ex3')">▶ ACTIVATE</button>
+                    <div class="code-output" id="output-ex3">Variables ready to rock!</div>
+
+                    <button class="btn" style="margin-top: 3rem;" onclick="showPage('quiz')">Take the Ultimate Quiz →</button>
+                </div>
+            </div>
+
+            <div id="quiz-page" style="display:none;">
+                <div class="content-card">
+                    <h2>Knowledge Challenge</h2>
+                    <p>Prove your Python mastery with these epic questions!</p>
+
+                    <div class="quiz-question">
+                        <h3>Question 1: What is a variable?</h3>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="wrong1">
+                            <span>A dangerous snake species</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="correct">
+                            <span>A container that stores data</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q1" value="wrong2">
+                            <span>A function to display output</span>
+                        </label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>Question 2: Which function displays output in Python?</h3>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="wrong1">
+                            <span>display()</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="correct">
+                            <span>print()</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q2" value="wrong2">
+                            <span>show()</span>
+                        </label>
+                    </div>
+
+                    <div class="quiz-question">
+                        <h3>Question 3: What outputs? <code>x = 5; y = 3; print(x + y)</code></h3>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="wrong1">
+                            <span>53</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="correct">
+                            <span>8</span>
+                        </label>
+                        <label class="quiz-option">
+                            <input type="radio" name="q3" value="wrong2">
+                            <span>x + y</span>
+                        </label>
+                    </div>
+
+                    <button class="btn" onclick="checkQuiz()">SUBMIT ANSWERS</button>
+                    <div class="quiz-result" id="quiz-result"></div>
+                </div>
+            </div>
+
+            <div id="about-page" style="display:none;">
+                <div class="content-card">
+                    <h2>About PySnaky ℹ️</h2>
+
+                    <div class="mission-vision">
+                        <div class="vision-card">
+                            <h3>Vision 👁️‍🗨️</h3>
+                            <p>To be the most electrifying and immersive platform for learning Python, transforming complex coding challenges into an epic, gamified adventure that inspires a new generation of developers.</p>
+                        </div>
+                        <div class="mission-card">
+                            <h3>Mission 🚀</h3>
+                            <p>We are dedicated to providing high-quality, interactive, and visually stunning tutorials, live coding environments, and challenging quizzes to ensure every learner achieves true Python mastery with creativity and fun.</p>
+                        </div>
+                    </div>
+                    
+                    <h3> About the Developer👩‍💻</h3>
+                    <p>I’m Mariam Moutaz, a curious explorer of the coding world and a Computer Science student at the Arab Open University. I love turning complex programming concepts into fun and interactive lessons that anyone can enjoy. This website is my little playground where learning meets creativity!</p>
+
+                    <h3>Contact Us 📞</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <span class="contact-icon">📧</span> 
+                            Email: <a href="mailto:mariammoutazyahia@gmail.com"> mariammoutazyahia@gmail.com</a>
+                        </li>
+                        <li>
+                            <span class="contact-icon">📱</span> 
+                            Phone: +201006015121
+                        </li>
+                        <li>
+                            <span class="contact-icon">🔗</span> 
+                            LinkedIn: <a href="https://www.linkedin.com/in/mariam-moutaz-yahia" target="_blank"> Mariam Moutaz Yahia Profile</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
