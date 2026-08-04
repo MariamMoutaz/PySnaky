@@ -1,4 +1,4 @@
-// --- 1. Custom Cursor ---
+
 const cursor = document.getElementById('cursor');
 document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
@@ -8,7 +8,7 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mousedown', () => cursor.classList.add('click'));
 document.addEventListener('mouseup', () => cursor.classList.remove('click'));
 
-// --- 2. Matrix Rain Effect ---
+
 const matrix = document.getElementById('matrix');
 const ctx = matrix.getContext('2d');
 
@@ -42,7 +42,6 @@ function drawMatrix() {
 }
 setInterval(drawMatrix, 35);
 
-// --- 3. Cosmic Particles ---
 function createParticles() {
     const container = document.getElementById('particles');
     if (!container) return;
@@ -63,17 +62,17 @@ function createParticles() {
     }
 }
 
-// --- 4. Navigation System ---
+
 function showPage(pageId) {
     const pages = ['home', 'lesson', 'examples', 'quiz', 'about'];
     
-    // Hide all pages
+
     pages.forEach(p => {
         const el = document.getElementById(p + '-page');
         if (el) el.style.display = 'none';
     });
 
-    // Show target page
+    
     const targetPage = document.getElementById(pageId + '-page');
     if (targetPage) {
         targetPage.style.display = 'block';
@@ -103,7 +102,7 @@ function updateSidebar(page) {
     });
 }
 
-// --- 5. Simulated Python Execution ---
+
 function runCode(codeId, outputId) {
     const code = document.getElementById(codeId).textContent;
     const output = document.getElementById(outputId);
@@ -140,7 +139,7 @@ function runCode(codeId, outputId) {
     }, 800);
 }
 
-// --- 6. Quiz & Rewards ---
+
 function checkQuiz() {
     let score = 0;
     const q1 = document.querySelector('input[name="q1"]:checked')?.value;
@@ -190,7 +189,7 @@ function createFireworks() {
     }
 }
 
-// --- 7. Event Listeners & Init ---
+
 window.addEventListener('resize', setupMatrix);
 
 document.addEventListener('keydown', (e) => {
