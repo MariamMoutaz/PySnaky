@@ -12,7 +12,7 @@ body {
     cursor: none;
 }
 
-/* Custom Cursor */
+
 .custom-cursor {
     width: 20px;
     height: 20px;
@@ -30,7 +30,7 @@ body {
     background: rgba(0, 255, 255, 0.3);
 }
 
-/* Video Background with Matrix Effect */
+
 .video-background {
     position: fixed;
     top: 0;
@@ -70,7 +70,7 @@ body {
     filter: hue-rotate(200deg) saturate(2);
 }
 
-/* Matrix Rain Effect */
+
 .matrix-canvas {
     position: fixed;
     top: 0;
@@ -82,7 +82,7 @@ body {
     pointer-events: none;
 }
 
-/* Animated 3D Background Shapes */
+/*3d Shapes*/
 .bg-shapes {
     position: fixed;
     top: 0;
@@ -172,7 +172,7 @@ body {
     100% { transform: translate(var(--tx), var(--ty)) scale(0.3); opacity: 0; }
 }
 
-/* Navigation with Holographic Effect */
+
 nav {
     background: linear-gradient(135deg, 
         rgba(10, 10, 30, 0.85), 
@@ -345,7 +345,7 @@ nav {
     50% { transform: translateY(-3px); }
 }
 
-/* Container */
+
 .container {
     max-width: 1500px;
     margin: 140px auto 50px;
@@ -354,7 +354,7 @@ nav {
     z-index: 1;
 }
 
-/* Hero Section with 3D Transform */
+/* 3D Transform */
 .hero {
     text-align: center;
     padding: 5rem 2rem;
@@ -436,7 +436,7 @@ nav {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Holographic Button */
+
 .btn {
     display: inline-block;
     padding: 1.8rem 4.5rem;
@@ -648,7 +648,7 @@ nav {
     font-size: 1.1rem;
 }
 
-/* Content Card with Holographic Effect */
+
 .content-card {
     background: linear-gradient(135deg, 
         rgba(30, 30, 70, 0.85), 
@@ -733,7 +733,7 @@ nav {
     margin-bottom: 1.5rem;
 }
 
-/* Futuristic Code Editor */
+
 .code-editor {
     background: linear-gradient(135deg, #0a0a1e, #16213e);
     border-radius: 25px;
@@ -867,7 +867,7 @@ nav {
     transform: translateY(-3px) scale(1.05);
 }
 
-/* Futuristic Sidebar */
+
 .sidebar {
     position: fixed;
     right: 40px;
@@ -956,7 +956,7 @@ nav {
     filter: drop-shadow(0 0 10px currentColor);
 }
 
-/* Quiz with Neon Effects */
+/* Quiz- Neon Effects */
 .quiz-question {
     background:(135deg, 
         rgba(50, 30, 90, 0.9), 
@@ -1066,7 +1066,7 @@ nav {
     }
 }
 
-/* --- New About Page Styles --- */
+
 
 .mission-vision {
     display: grid;
@@ -1146,7 +1146,7 @@ nav {
     text-shadow: 0 0 10px #ffc400;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     body { cursor: auto; }
     .custom-cursor { display: none; }
